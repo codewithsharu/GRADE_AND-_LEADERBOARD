@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>created by Mr.go_4.4.4</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link rel="icon" href="./1492183.webp">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body >
+  <div class="main">
+    <div class="sidebar">
+      <div class="nav">
+        <div class="loader">
+          <div class="bar bar1"></div>
+          <div class="bar bar2"></div>
+          <div class="bar bar3"></div>
+          <div class="bar bar4"></div>
+          <div class="bar bar5"></div>
+          <div class="bar bar6"></div>
+          <div class="bar bar7"></div>
+          <div class="bar bar8"></div>
+      </div>
+      </div>
+
+      <div class="library" style="overflow-y: auto;  ">
+        <div class="LIB">
+          <div class="option">
+            <a style="margin-left:1.4rem;"><button id="myButton" class="btn" id="myButton">
+              <span class="btn__visible">Data Entry</span>
+              <span id="submittedCount" class="btn__invisible">Only 2 Left</span>
+          </button></a>
+          </div>
+          <div style="font-size: 1.5rem; margin-right: 0.8rem;" class="option">
+            <i class="fa-solid fa-plus" style="color: #eeeff2;"></i>
+            <i class="fa-solid fa-arrow-right" style="color: #ededed; margin-left: 0.5rem;"></i>
+          </div>
+        </div>
+        <form class="form" id="studentForm" style=" position: relative; margin-left:10px;">
+          <input type="text" id="name" name="name" class="input" placeholder="Name" required />
+
+<input type="text" id="rollNumber" name="rollNumber" class="input" placeholder="Roll Number" required />
+
+<input type="number" id="mathsMarks" name="mathsMarks" class="input" placeholder="Maths Marks" required />
+
+<input type="number" id="javaMarks" name="javaMarks" class="input" placeholder="Java Marks" required />
+
+<input type="number" id="pythonMarks" name="pythonMarks" class="input" placeholder="Python Marks" required />
+
+          <center><button class="button"  onclick="submitData()" >Submit</button></center>
+      </form>
+
+    <div class="blank" style="width:100%; height: 500px;"></div>
+         
+        </div>
+    </div>
+    <!-- sidebar -->
+  </div>
+
+  <div class="main-context" style="overflow: auto; padding-left: 3rem;  color:white; background-color:#072541;">
+    <div class="sticky" style="display: flex; align-items: center;">
+      <div class="1">
+              
+        <button class="button" onclick="goToHomePage()" style="background-color:black;">
+          Home
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="2" style="display: flex;">
+            
+        <button  onclick="clearData()" style="background-color: black; color: #ededed; margin-left: 0.5cm; margin-right: 0.5cm;">
+          <i class="fa-solid fa-download fa-sm" style="color: #eff0f0;"></i><span> &nbsp;clear Data</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- <h2>Average Marks</h2> -->
+    <div id="averageMarks" style="width: 0px;height: 0px; overflow: hidden;">
+         Maths : <span id="averageMathsMarks">0.00</span>
+       &nbsp;&nbsp;  Java : <span id="averageJavaMarks">0.00</span>
+       &nbsp;&nbsp; Python : <span id="averagePythonMarks">0.00</span>
+    </div>
+    <div style="height:0px; overflow: hidden;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+<center>    <h2>Submitted Student Data</h2>
+</center>
+    <div id="submittedData">
+    </div>
+
+
+    <script src="./script.js"></script>
+
+
+</body>
+</html>

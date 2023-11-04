@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>created by Mr.go_4.4.4</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link rel="icon" href="./1492183.webp">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body  >
+  <div class="main">
+    <div class="sidebar" >
+      <div class="nav" style="background-color: #183D3D;">
+        <div class="loader">
+          <div class="bar bar1"></div>
+          <div class="bar bar2"></div>
+          <div class="bar bar3"></div>
+          <div class="bar bar4"></div>
+          <div class="bar bar5"></div>         
+           <div class="bar bar6"></div>
+          <div class="bar bar7"></div>
+          <div class="bar bar8"></div>
+      </div>
+      </div>
+
+      <div class="library" style="overflow-y: auto; background-color:#183D3D;">
+        <div class="LIB">
+          <div class="option">
+            <a style="margin-left:1.4rem;"><button id="myButton" class="btn" id="myButton">
+              <span class="btn__visible">Data Entry</span>
+              <span id="submittedCount" class="btn__invisible">Only</span>
+          </button></a>
+          </div>
+          <div style="font-size: 1.5rem; margin-right: 0.8rem;" class="option">
+            <i class="fa-solid fa-plus" style="color: #eeeff2;"></i>
+            <i class="fa-solid fa-arrow-right" style="color: #ededed; margin-left: 0.5rem;"></i>
+          </div>
+        </div>
+      
+        <div style="margin-top: 20px;" class="leaderboard">
+          
+        <div  class="lead1">
+          <div class="card_box">
+             <span></span>
+              <p id="top1JavaName" style="margin-left: 100px;">NULL</p>
+
+          </div>
+        </div>
+  
+        
+        <div style="margin-top: 20px;"  class="lead1">
+          <div class="card_box" id="c2">
+              <span></span>
+              <p id="top2JavaName" style="margin-left: 100px;"></p>
+          </div>
+        </div>
+  
+        
+        <div style="margin-top: 20px;" class="lead1"  id="c3">
+          <div class="card_box">
+              <span ></span>
+              <p id="top3JavaName" style="margin-left: 100px;"></p>
+
+          </div>
+        </div>
+  
+
+        </div>
+       
+    <div class="blank" style="width:100%; height: 500px;"></div>   
+        </div>
+    </div>
+    <!-- sidebar -->
+  </div>
+
+  <div class="main-context" style="overflow: auto; padding-left: 3rem;  color: #B9B4C7; background-color: #072541;">
+    <div class="sticky" style="display: flex; align-items: center;">
+      <div class="1">
+
+      </div>
+      <div class="2" style="display: flex;">
+        <button class="button" id="exploreButton" style="background-color:black;">
+          Enter Data
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+             
+        <button  onclick="clearData()" style="background-color: black; color: #ededed; margin-left: 0.5cm; margin-right: 0.5cm;">
+          <i class="fa-solid fa-download fa-sm" style="color: #eff0f0;"></i><span> &nbsp;clear Data</span>
+        </button>
+        
+      </div>
+    </div>
+
+    <h2>Average Marks</h2>
+
+    <div id="averageMarks" style="color: rgb(174, 0, 255);" >
+         Maths : <span id="averageMathsMarks" style="color:#FF6C22;">0.00</span>
+       &nbsp;&nbsp;  Java : <span id="averageJavaMarks" style="color:#FF6C22;">0.00</span>
+       &nbsp;&nbsp; Python : <span id="averagePythonMarks" style="color:#FF6C22;">0.00</span>
+    </div>
+
+
+    <div style="height: 300px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <!-- Top student names -->
+    <p id="top1JavaName"></p>
+    <p id="top2JavaName"></p>
+    <p id="top3JavaName"></p>
+
+    <div id="submittedData" style="width: 0px; height:0px; overflow: hidden;">
+    </div>
+    <h2>Top Students - Overall Marks</h2>
+    <div id="topOverallList">
+      <button class="cc" onclick="showTopOverallStudents()">
+        CHECK
+      </button>
+    </div>
+    <h2>Top Students - Maths Marks</h2>
+    <div id="topMathsList" onclick="showTopMathsStudents()">
+      <button class="cc">
+        CHECK
+      </button>
+    </div>
+    <h2>Top Students - Java Marks</h2>
+    <div id="topJavaList" onclick="showTopJavaStudents()">
+      <button class="cc">
+        CHECK
+      </button>
+    </div>
+    <h2>Top Students - Python Marks</h2>
+  
+    <div id="topPythonList">
+      <button class="cc"  onclick="showTopPythonStudents()">
+        CHECK
+    </button>
+    </div>
+   <div class="space" style="height: 190px;"></div>
+
+<div class="fot">
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+    </ul>
+    <p>&copy;2023 Aitam Tekkali | All Rights Reserved</p>
+  </footer>
+  
+</div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="./script.js"></script>
+
+
+</body>
+</html>
